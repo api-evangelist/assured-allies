@@ -1,0 +1,83 @@
+generated: '2026-08-02'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml hosts (website + both member-platform domains)
+hosts:
+- host: assuredallies.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 11 15:58:19 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: neverstop.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 20 08:39:35 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: app.neverstop.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 24 04:48:19 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+  hsts_include_subdomains: true
+  hsts_preload: true
+- host: assured.care
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 26 08:40:35 2026 GMT
+  hsts: true
+  hsts_max_age: 0
+  hsts_include_subdomains: true
+  hsts_preload: true
+  note: 'Strict-Transport-Security is served with max-age=0, which disables HSTS enforcement
+    despite the includeSubDomains/preload directives.'
+domains:
+- domain: assuredallies.com
+  dnssec: false
+  caa: []
+  spf: true
+  spf_record: v=spf1 include:_spf.google.com include:amazonses.com include:_spf.salesforce.com
+    include:4871571.spf04.hubspotemail.net -all
+  dmarc: true
+  dmarc_policy: reject
+- domain: neverstop.com
+  dnssec: true
+  caa:
+  - 0 issue "amazontrust.com"
+  - 0 issue "comodoca.com"
+  - 0 issue "digicert.com; cansignhttpexchanges=yes"
+  - 0 issue "letsencrypt.org"
+  - 0 issue "pki.goog; cansignhttpexchanges=yes"
+  - 0 issue "ssl.com"
+  - 0 issuewild "awstrust.com"
+  - 0 issuewild "comodoca.com"
+  - 0 issuewild "digicert.com; cansignhttpexchanges=yes"
+  - 0 issuewild "letsencrypt.org"
+  - 0 issuewild "pki.goog; cansignhttpexchanges=yes"
+  - 0 issuewild "ssl.com"
+  spf: true
+  spf_record: v=spf1 include:_spf.google.com include:amazonses.com include:4871571.spf04.hubspotemail.net
+    include:_spf.salesforce.com include:mailgun.org -all
+  dmarc: true
+  dmarc_policy: reject
+- domain: assured.care
+  dnssec: false
+  caa: []
+  spf: true
+  spf_record: v=spf1 include:_spf.google.com include:_spf.salesforce.com ~all
+  dmarc: true
+  dmarc_policy: reject
+x-ownership-evidence:
+  note: The three domains share DMARC aggregate-report mailboxes, corroborating common
+    ownership of assuredallies.com, neverstop.com and assured.care.
+  shared_rua:
+  - 4b7a125b51@rua.easydmarc.us (all three domains)
+  - d56dde6ef94f4cd390971a62cd492939@dmarc-reports.cloudflare.net (assuredallies.com
+    + assured.care)
+x-evidence:
+  probed: '2026-08-02'
+  tools:
+  - dig
+  - openssl s_client
+  - curl -I

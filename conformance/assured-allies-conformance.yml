@@ -1,0 +1,78 @@
+generated: '2026-08-02'
+method: searched
+source: https://assuredallies.com/privacy
+summary: 'Assured Allies publishes no machine-readable API contract, so there is nothing to
+  derive protocol conformance from. What it does publish is a health-privacy posture:
+  the privacy policy carries a HIPAA section describing the duties it assumes over the
+  Health Information it processes on behalf of insurance carriers and members. No
+  third-party certification (SOC 2, ISO 27001, HITRUST, PCI DSS, FedRAMP) is published
+  on any Assured Allies host, and no trust center exists.'
+standards:
+- id: hipaa
+  conforms: true
+  basis: self-declared
+  evidence: 'Privacy policy, "Health Information" section: "This information may be
+    regulated under applicable state law and/or the Health Insurance Portability and
+    Accountability Act of 1996 (\"HIPAA\"). Set forth below is a summary of our assumed
+    duties and privacy practices regarding your Health Information..." — covers healthcare
+    operations, de-identified data, and subcontractor (business-associate) handling.'
+  source: https://assuredallies.com/privacy
+  note: A published statement of assumed HIPAA duties, not an audited attestation. No
+    certificate, report, or trust page was found.
+- id: soc2
+  conforms: false
+  evidence: No SOC 2 claim found on assuredallies.com, neverstop.com or assured.care;
+    trust.assuredallies.com does not resolve and /trust, /security and /compliance all
+    404 on the primary site.
+- id: iso-27001
+  conforms: false
+  evidence: No ISO 27001 claim found on any Assured Allies host.
+- id: gdpr
+  conforms: false
+  evidence: Privacy policy is US/state-law and HIPAA oriented; no GDPR/UK-GDPR data-subject
+    or lawful-basis section was found.
+- id: oauth2
+  conforms: unknown
+  evidence: No public OpenAPI, no /.well-known/oauth-authorization-server and no
+    /.well-known/openid-configuration on any host. The member application backend at
+    app.neverstop.com/backend/api answers 401/403 JSON to anonymous requests, so an
+    auth model exists but is not publicly documented.
+- id: rfc9457-problem-details
+  conforms: unknown
+  evidence: No public spec or error reference to evaluate.
+x-contract-discovery:
+  ran: '2026-08-02'
+  result: none
+  hosts_probed:
+  - assuredallies.com
+  - neverstop.com
+  - assured.care
+  - app.neverstop.com
+  - api.assuredallies.com (does not resolve)
+  - api.neverstop.com (does not resolve)
+  - api.assured.care (does not resolve)
+  - developer.assuredallies.com (does not resolve)
+  - docs.assuredallies.com (does not resolve)
+  paths_probed:
+  - /openapi.json
+  - /openapi.yaml
+  - /swagger.json
+  - /v1/openapi.json
+  - /api-docs
+  - /docs
+  - /redoc
+  - /graphql
+  - /asyncapi.yaml
+  - /llms.txt
+  findings:
+  - 'No OpenAPI/Swagger: every path 404s on the marketing and member sites; on
+    app.neverstop.com the SPA catch-all returns the HTML shell (extensionless) or a
+    403 XML object-store error (with extension), neither of which parses as a spec.'
+  - 'No GraphQL: /graphql returns the SPA shell, not a GraphQL endpoint; introspection
+    POST is not applicable.'
+  - 'No MCP server and no A2A agent card on any host.'
+  - 'A private, authenticated member backend exists at https://app.neverstop.com/backend/api
+    (discovered as API_BASE_URL in the published SPA bundle; anonymous requests return
+    403, and /backend/api/guide/state returns 401 application/json). It is an internal
+    first-party surface with no public documentation, no published contract and no
+    self-serve access, so it is NOT registered as a public API in apis.yml.'

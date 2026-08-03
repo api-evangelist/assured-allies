@@ -1,0 +1,38 @@
+# Assured Allies
+
+> Assured Allies is a Boston- and Tel Aviv-based insurtech that partners with long-term care insurance carriers to rebuild the LTC category around successful aging. Founded in 2018 by Roee Nahir and Afik Gal, it combines data science, predictive analytics and human coaching across wellness, digital underwriting, product development and distribution enablement, and reaches members through two consumer programs: NeverStop (55+ wellness and rewards) and AgeAssured (support for policyholders aging at home).
+
+> API status: as of 2026-08-02 Assured Allies publishes NO public API, developer portal, API documentation, SDK, or machine-readable contract (no OpenAPI, GraphQL, AsyncAPI, MCP server or A2A agent card). Its member application runs against a private, authenticated backend. Do not assume a public integration surface exists.
+
+## Company
+
+- [Assured Allies](https://assuredallies.com/): Company home — long-term care insurance rebuilt for a new generation.
+- [Company](https://assuredallies.com/company): Mission, leadership, advisory board, scale (100+ employees, 100,000+ older adults covered, $78M+ raised).
+- [Contact](https://assuredallies.com/contact): Carrier and partner enquiries / demo requests.
+- [Careers](https://assuredallies.applytojob.com/apply): Open roles.
+
+## Solutions
+
+- [NeverStop Wellness](https://assuredallies.com/solutions/wellness): Integrated wellness and rewards program for long-term care insurance blocks; company reports ~7% claims reduction and a 66% successful-intervention rate.
+- [Digital Underwriting](https://assuredallies.com/solutions/underwriting): Data-driven underwriting the company says closes policies in about 40 minutes.
+- [Product Development](https://assuredallies.com/solutions/product): Components carriers assemble into modern LTCI portfolios.
+- [Distribution Excellence](https://assuredallies.com/solutions/distribution): Tools and training that turn agents into longevity planners.
+
+## Member programs
+
+- [NeverStop](https://neverstop.com/): Coaching and rewards program for the wellness-motivated 55+ market, distributed through partner organizations and carriers such as EquiTrust.
+- [NeverStop member application](https://app.neverstop.com/): Authenticated member web application (private backend; no public API).
+- [AgeAssured](https://assured.care/): Support program helping policyholders overcome obstacles to thriving at home.
+- [Member testimonials](https://assuredallies.com/member-testimonials): Published member outcomes.
+
+## Legal and privacy
+
+- [Terms of Service](https://assuredallies.com/terms)
+- [Privacy Policy](https://assuredallies.com/privacy): Includes a HIPAA "Health Information" section describing the duties Assured Allies assumes over member health data. Privacy contact: privacy@assuredallies.com.
+
+## API Evangelist artifacts
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/assured-allies/refs/heads/main/apis.yml): APIs.json 0.20 profile for Assured Allies.
+- [Conformance](https://raw.githubusercontent.com/api-evangelist/assured-allies/refs/heads/main/conformance/assured-allies-conformance.yml): Standards posture plus the full contract-discovery record (what was probed and what was absent).
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/assured-allies/refs/heads/main/security/assured-allies-domain-security.yml): Probed TLS, HSTS, DNSSEC, CAA, SPF and DMARC across all three domains.
+- [Well-known probe](https://raw.githubusercontent.com/api-evangelist/assured-allies/refs/heads/main/well-known/assured-allies-well-known.yml): Result of probing the /.well-known/ discovery surface on every host (no documents published).

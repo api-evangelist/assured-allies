@@ -13,6 +13,17 @@ description: 'Assured Allies is an insurtech company founded in 2018 by Roee Nah
   profile Assured Allies publishes no public developer portal, API documentation, or machine-readable API
   contract; its member application backend is private and authenticated.'
 url: https://raw.githubusercontent.com/api-evangelist/assured-allies/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://framerusercontent.com/images/zqowwAhE07vLIKvageFfA5qAo.png
 x-type: company
 x-source: harvest:secondary-market

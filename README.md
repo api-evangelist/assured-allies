@@ -64,26 +64,82 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Assured Allies is an insurtech company founded in 2018 by Roee Nahir and Afik Gal, headquartered in Boston with an office in Tel Aviv, that partners with long-term care insurance carriers to rebuild the LTC category around successful aging. Its platform spans NeverStop Wellness, Digital Underwriting, Product Development and Distribution Excellence, and reaches members through two consumer programs — NeverStop (55+ wellness and rewards) and AgeAssured (support for policyholders aging at home). The company raised a $42.5M Series B in 2023 co-led by FinTLV Ventures and Harel Insurance.
+Assured Allies is an insurtech company founded in 2018 by Roee Nahir and Afik Gal, headquartered in Boston with an office in Tel Aviv, that partners with long-term care insurance carriers to rebuild the LTC category around successful aging. Its platform combines data science, predictive analytics and human coaching across four solution lines — NeverStop Wellness (an integrated wellness and rewards program the company reports reduces claims by roughly 7%), Digital Underwriting (which it says closes policies in about 40 minutes), Product Development for carrier LTCI portfolios, and Distribution Excellence agent enablement. Two consumer-facing programs sit on top of the platform: NeverStop (neverstop.com) for the wellness-motivated 55+ market and AgeAssured (assured.care) for policyholders aging at home. The company raised a $42.5M Series B in 2023 co-led by FinTLV Ventures and Harel Insurance, reports $78M+ raised in total, and works with carriers and programs including EquiTrust and CalPERS Long-Term Care. As of this profile Assured Allies publishes no public developer portal, API documentation, or machine-readable API contract; its member application backend is private and authenticated.
 
-## API status
+**Areas:** Company · Insurance · Insurtech · Long-Term Care · Health · Aging · Retirement · Underwriting · Wellness
 
-**No public API surface.** A full contract-discovery pass on 2026-08-02 found no OpenAPI/Swagger, no GraphQL, no AsyncAPI, no MCP server, no A2A agent card, no `/llms.txt`, no `/.well-known/` documents, no SDKs or packages, and no developer portal or API documentation on any Assured Allies host. A private, authenticated member-application backend exists at `https://app.neverstop.com/backend/api` (401/403 to anonymous requests); it is undocumented and is deliberately not registered as a public API. See `conformance/assured-allies-conformance.yml` for the full probe record.
+## Assured Allies on APIs.io
 
-## Links
+Everything profiled for Assured Allies is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/assured-allies/](https://apis.io/providers/assured-allies/)** — or go straight to one of the APIs or properties below.
 
-- Website: https://assuredallies.com/
-- Company: https://assuredallies.com/company
-- Contact: https://assuredallies.com/contact
-- NeverStop: https://neverstop.com/
-- AgeAssured: https://assured.care/
-- Terms: https://assuredallies.com/terms
-- Privacy (includes HIPAA health-information practices): https://assuredallies.com/privacy
-- Secondary market listing: https://www.hiive.com/securities/assured-allies-stock
+### Published properties
 
-## Artifacts
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- `conformance/assured-allies-conformance.yml` — standards posture (HIPAA self-declared; no SOC 2 / ISO 27001 published) plus the contract-discovery record.
-- `security/assured-allies-domain-security.yml` — probed TLS/HSTS/DNSSEC/CAA/SPF/DMARC across all three domains.
-- `well-known/assured-allies-well-known.yml` — `/.well-known/` probe results (nothing published).
-- `llms/assured-allies-llms.txt` — generated llms.txt for the company.
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Assured Allies Domain Security](https://apis.io/security/assured-allies/assured-allies-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://assuredallies.com/)
+- [Compliance](https://assuredallies.com/privacy)
+- [Terms of service](https://assuredallies.com/terms)
+- [Privacy policy](https://assuredallies.com/privacy)
+
+## API Evangelist rating
+
+**Kin Score 16.8** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 0.0 |
+| Access clarity | 42.1 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 21.1** — Insurance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/assured-allies/](https://apis.io/providers/assured-allies/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Assured Allies: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/assured-allies/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
